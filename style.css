@@ -1,0 +1,51 @@
+#container{
+    display: grid;
+    grid-template-columns: repeat(2,0fr);
+    grid-gap: 2em;
+    justify-content: center;
+}
+.card{
+    height: fit-content;
+    width: 20em;
+    box-shadow:0px 0px 50px 2px rgba(128, 128, 128, 0.601);
+    padding: 2% 2%;
+}
+.loader{
+    height: 100vh;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+}
+.circles{
+    height: 2em;
+    width: 2em;
+    border-radius: 45px;
+    background-color: aqua;
+    animation: frst 2s infinite;
+}
+@keyframes frst {
+    100%{
+        transform: scale(0.8);
+    }
+}
+.circles:nth-child(2){
+    background-color: red;
+    animation: secnd 2s infinite;
+}
+@keyframes secnd {
+    100%{
+        transform: scale(1.2);
+    }
+}
+.circles:nth-child(3){
+    background-color: green;
+    animation: third 2s infinite;
+}
+@keyframes third {
+    100%{
+        transform: scale(1.4);
+    }
+}
