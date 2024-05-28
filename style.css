@@ -18,34 +18,29 @@
     justify-content: center;
     align-items: center;
     gap: 1em;
+    position: fixed;
 }
-.circles{
-    height: 2em;
-    width: 2em;
-    border-radius: 45px;
-    background-color: aqua;
-    animation: frst 2s infinite;
-}
-@keyframes frst {
-    100%{
-        transform: scale(0.8);
-    }
-}
-.circles:nth-child(2){
+.loader div {
+    width: 24px;
+    height: 24px;
     background-color: red;
-    animation: secnd 2s infinite;
+    border-radius: 50%;
+    animation: bounce 0.6s infinite alternate;
 }
-@keyframes secnd {
-    100%{
-        transform: scale(1.2);
-    }
-}
-.circles:nth-child(3){
+
+.loader div:nth-child(2) {
+    animation-delay: 0.2s;
     background-color: green;
-    animation: third 2s infinite;
 }
-@keyframes third {
-    100%{
-        transform: scale(1.4);
+
+.loader div:nth-child(3) {
+    animation-delay: 0.4s;
+    background-color: blue;
+}
+
+@keyframes bounce {
+    to {
+        transform: translateY(-100%);
+        /* opacity: 0.6; */
     }
 }

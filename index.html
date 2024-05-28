@@ -3,42 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>FETCH-API</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="loader">
-        <div class="circles"></div>
-        <div class="circles"></div>
-        <div class="circles"></div>
-    </div>
+    <!-- <div class="loader">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div> -->
     <div id="container">
         
     </div>
 
+
     <script>
-        let url = "http://universities.hipolabs.com/search?country=United+States"
-        fetch(url)
+        let link = "https://fakestoreapi.com/products"
 
+        fetch(link)
 
-        .then(Response => Response.json())
+        .then(response => response.json())
 
-        .then(data =>{
+        .then(data=>{
             console.log(data);
 
-            for(let i=0; i<5;i++){
-                // document.write(data[i].name, "<br>")
-                document.getElementById("container").innerHTML += `<div class="card">
-            <h2>${data[i].name}</h2>
-            <h5>${data[i].country}</h5>
-            <a href="${data[i].web_pages[0]}">Website Link</a>
-        </div>`
-            }
+          for(let i=0; i<5; i++){
+            document.getElementById("container").innerHTML += `<h1>${data[i].title}</h1>`
+          }
+
         })
 
         .catch(error =>{
-console.log("error",error)
-        });
+            console.log("error",error);
+        })
+
+
     </script>
+    <!-- <script src="main.js"></script> -->
 </body>
 </html>
